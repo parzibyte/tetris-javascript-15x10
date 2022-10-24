@@ -25,7 +25,7 @@ class Game {
     // Square length in pixels
     static SQUARE_LENGTH = screen.width > 420 ? 30 : 20;
     static COLUMNS = 10;
-    static ROWS = 20;
+    static ROWS = 15;
     static CANVAS_WIDTH = this.SQUARE_LENGTH * this.COLUMNS;
     static CANVAS_HEIGHT = this.SQUARE_LENGTH * this.ROWS;
     static EMPTY_COLOR = "#eaeaea";
@@ -132,6 +132,7 @@ y a <a href="https://freesound.org/people/grunz/sounds/109662/">Freesound.org</a
                     this.attemptMoveDown();
                     break;
                 case "KeyR":
+                case "ArrowUp":
                     this.attemptRotate();
                     break;
                 case "KeyP":
