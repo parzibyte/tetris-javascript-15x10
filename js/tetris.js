@@ -262,6 +262,11 @@ y a <a href="https://freesound.org/people/grunz/sounds/109662/">Freesound.org</a
 
 
     addScore(rows) {
+        if (Game.PIECE_SPEED > 0) {
+            Game.PIECE_SPEED -= (rows.length * 20);
+            clearInterval(this.intervalId);
+            this.intervalId = setInterval(this.mainLoop.bind(this), Game.PIECE_SPEED);
+        }
         this.score += Game.PER_SQUARE_SCORE * Game.COLUMNS * rows.length;
         this.refreshScore();
     }
